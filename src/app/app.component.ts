@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
-//import { APP_ROUTER_PROVIDER } from './app.routes';
 import { HeaderComponent } from './header';
 import { BlogService} from './blog.service';
 import { BlogComponent } from './blog/blog.component';

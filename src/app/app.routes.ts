@@ -5,7 +5,7 @@
 import { provideRouter } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
-//import { BlogService } from './blog.service';
+// import { BlogService } from './blog.service';
 import { BlogComponent} from './blog/blog.component';
 
 export const routes = [
