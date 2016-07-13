@@ -8,8 +8,6 @@ import { Thing } from './thing';
 @Injectable()
 export class BlogService {
 
-  posts;
-
   api_url: string;
 
   constructor(private http: Http) {
@@ -17,8 +15,6 @@ export class BlogService {
     console.log('Blog Service');
 
     this.api_url = 'http://localhost:3000/api/news';
-
-    this.posts = ['one', 'two', 'three'];
 
   }
 
@@ -38,8 +34,20 @@ export class BlogService {
       });
   }
 
-  getPosts() {
-    return this.posts;
+  addNews(thing: Thing) {
+
+    console.log("Creating thing");
+
+    return this.http.post(this.api_url, thing)
+      .map(function(res: Response) {
+        console.log('Server response ',res);
+        let body = res.json();
+        return <Thing> body;
+      })
+      .catch(function(err:Response) {
+        console.log("HTTP Error ", err);
+        return Observable.throw(err.json().error || 'Server error');
+      });
   }
 
 }

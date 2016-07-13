@@ -1,5 +1,14 @@
 <h3>Blog Angular2</h3>
-
+<form (submit)="addNews()">
+  <div class="form-group">
+    <div class="input-group">
+    <input type="title" class="form-control" name="title" placeholder="Title*" [(ngModel)]="new_title">
+      <span class="input-group-btn">
+          <button type="submit" class="btn btn-default">Add</button>
+      </span>
+    </div>
+  </div>
+</form>
 <div *ngFor="let thing of things">
   {{thing.title}} - {{thing.body}} - {{thing.time_created}}
 </div>
